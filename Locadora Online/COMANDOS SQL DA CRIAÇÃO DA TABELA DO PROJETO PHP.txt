@@ -1,0 +1,36 @@
+COMANDOS SQL DA CRIAÇÃO DA TABELA DO PROJETO PHP
+
+CREATE TABLE `clientes` (
+`codcli` INT(10) AUTO_INCREMENT PRIMARY KEY, 
+`rg` VARCHAR(20), 
+`cpf` VARCHAR(20), 
+`nome` VARCHAR(50), 
+`rua` VARCHAR(50), 
+`num` VARCHAR(10), 
+`bairro` VARCHAR(30), 
+`cidade` VARCHAR(30), 
+`estado` VARCHAR(2),
+INDEX (`codcli`),
+UNIQUE (`codcli`)
+); 
+
+CREATE TABLE `filmes` (
+`codfil` INT(10) NOT NULL AUTO_INCREMENT PRIMARY KEY, 
+`nome` VARCHAR(50), 
+`genero` VARCHAR(30), 
+`maxdias` VARCHAR(5), 
+`foto` VARCHAR(30), 
+`sinopse` VARCHAR(200),
+INDEX (`codfil`),
+UNIQUE (`codfil`)
+); 
+
+CREATE TABLE `locacao` (
+`codloc` INT(10) NOT NULL AUTO_INCREMENT PRIMARY KEY, 
+`dataemp` DATE, 
+`datadev` DATE, 
+`codfil` VARCHAR(10), 
+`codcli` VARCHAR(10),
+INDEX (`codloc`),
+UNIQUE (`codloc`)
+); 
